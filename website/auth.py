@@ -36,8 +36,9 @@ def sign_up():
     if request.method == 'POST':
         email = request.form.get('email')
         first_name = request.form.get('firstName')
+        direccion = request.form.get('direccion')
         password1 = request.form.get('password1')
-        password2 = request.form.get('password2')
+        
         user = User.query.filter_by(email=email).first()
         if user:
             flash('Email ya existe', category='error')
@@ -45,12 +46,12 @@ def sign_up():
             flash('Email demasiado pequeño', category='error')
         elif len(first_name) < 2:
             flash('Nombre no valido', category='error')
-        elif password1 != password2:
-            flash('Contraseña no coincide', category='error')
+        elif len(direccion) < 4:
+            flash('Direccion demasido corta, no valido', category='error')
         elif len(password1) < 7:
-            flash('Contraseña no valida', category='error')
+            flash('Contraseña no valida(demasiado corta)', category='error')
         else:
-            new_user = User(email = email, first_name=first_name, password=generate_password_hash(password1, method='sha256'))
+            new_user = User(email = email, first_name=first_name, direccion=direccion, password=generate_password_hash(password1, method='sha256'))
             db.session.add(new_user)
             db.session.commit()
             flash('Cuenta creada', category='success')

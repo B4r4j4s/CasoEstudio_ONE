@@ -1,0 +1,57 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f9fc;  /* Un color de fondo más suave y claro */
+}
+
+/* Estilizar la tarjeta (card) */
+.card {
+    border: none;  /* Remover el borde predeterminado de la tarjeta */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Sombra más pronunciada para darle un aspecto "elevado" */
+    overflow: hidden;  /* Esconder cualquier contenido que exceda los límites de la tarjeta */
+    border-radius: 10px;  /* Esquinas más redondeadas */
+}
+
+.card-header {
+    background-color: #007BFF;  /* Un color de cabecera azul */
+    color: white;  /* Texto blanco para contrastar con el fondo azul */
+    font-size: 24px;  /* Un tamaño de fuente más grande */
+    font-weight: bold;  /* Texto en negrita */
+}
+
+.card-body {
+    padding: 30px 35px;  /* Más espacio interior */
+}
+
+/* Estilizar los campos del formulario */
+.form-group label {
+    font-weight: bold;  /* Hacer las etiquetas más destacadas */
+    color: #444;  /* Color ligeramente oscuro para las etiquetas */
+}
+
+.form-control {
+    border-radius: 7px;  /* Esquinas más redondeadas */
+    border: 2px solid #e5e7eb;  /* Borde más grueso y claro */
+    transition: border 0.3s;  /* Transición suave al enfocarse */
+}
+
+.form-control:focus {
+    border-color: #007BFF;  /* Color azul al enfocarse */
+    box-shadow: none;  /* Remover la sombra por defecto de Bootstrap al enfocarse */
+}
+
+/* Estilizar el botón */
+.btn {
+    border-radius: 7px;  /* Esquinas más redondeadas */
+    font-weight: bold;  /* Texto en negrita */
+    transition: background-color 0.3s;  /* Transición suave al pasar el ratón por encima */
+}
+
+.btn-primary {
+    background-color: #007BFF;  /* Azul brillante */
+    border: none;  /* Remover el borde predeterminado */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;  /* Azul más oscuro al pasar el ratón por encima */
+}

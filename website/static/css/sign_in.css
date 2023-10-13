@@ -1,0 +1,68 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('https://fondosmil.com/fondo/517.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Estilizar la tarjeta (card) */
+.card {
+    border: none;  /* Remover el borde predeterminado de la tarjeta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Agregar una sombra ligera */
+    overflow: hidden;  /* Esconder cualquier contenido que exceda los límites de la tarjeta */
+    border-radius: 8px;  /* Redondear las esquinas */
+}
+
+.card-body {
+    padding: 25px 30px;  /* Aumentar el relleno para dar más espacio */
+}
+
+h5.card-title {
+    font-weight: bold;  /* Hacer el título más destacado */
+    margin-bottom: 20px;  /* Espacio adicional debajo del título */
+}
+
+/* Estilizar los campos del formulario */
+.form-group label {
+    font-weight: bold;  /* Hacer las etiquetas más destacadas */
+    color: #333;  /* Color oscuro para las etiquetas */
+}
+
+.form-control {
+    border-radius: 5px;  /* Esquinas ligeramente redondeadas para los campos de entrada */
+    border: 1px solid #ccc;  /* Borde suave */
+}
+
+/* Estilizar los botones */
+.btn {
+    border-radius: 5px;  /* Esquinas ligeramente redondeadas para los botones */
+    font-weight: bold;  /* Texto en negrita */
+}
+
+.btn-primary {
+    background-color: #007BFF;  /* Azul brillante */
+    border: none;  /* Remover el borde predeterminado */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;  /* Azul más oscuro al pasar el ratón por encima */
+}
+
+.btn-secondary {
+    background-color: #6c757d;  /* Gris oscuro */
+    border: none;  /* Remover el borde predeterminado */
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;  /* Gris un poco más oscuro al pasar el ratón por encima */
+}
+
+/* Estilizar el separador */
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;  /* Línea horizontal más suave */
+}

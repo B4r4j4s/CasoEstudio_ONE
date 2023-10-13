@@ -1,51 +1,69 @@
 {% extends "base.html" %}
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/sign_up.css') }}">
+{% endblock %}
 
 {% block title %}Sign up{% endblock %}
 {% block content %}
 
-<form method="POST">
-    <h3 align="center">Sign Up</h3>
-    <div class="form-group">
-      <label for="email">Email Address</label>
-      <input
-        type="email"
-        class="form-control"
-        id="email"
-        name="email"
-        placeholder="Enter email"
-      />
-    </div>
-    <div class="form-group">
-      <label for="firstName">First Name</label>
-      <input
-        type="text"
-        class="form-control"
-        id="firstName"
-        name="firstName"
-        placeholder="Enter first name"
-      />
-    </div>
-    <div class="form-group">
-      <label for="password1">Password</label>
-      <input
-        type="password"
-        class="form-control"
-        id="password1"
-        name="password1"
-        placeholder="Enter password"
-      />
-    </div>
-    <div class="form-group">
-      <label for="password2">Password (Confirm)</label>
-      <input
-        type="password"
-        class="form-control"
-        id="password2"
-        name="password2"
-        placeholder="Confirm password"
-      />
-    </div>
-    <br />
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+<div class="container">
+  <div class="row justify-content-center align-items-center" style="height:100vh;">
+      <div class="col-md-6">
+          <div class="card">
+              <div class="card-header text-center">
+                  Registrar usuario
+              </div>
+              <div class="card-body">
+
+                  <form method="POST">
+                      <h3 align="center">Sign Up</h3>
+                      <div class="form-group">
+                        <label 
+                        for="email">Correo Electronico:</label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="email"
+                          name="email"
+                          placeholder="Enter email"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="firstName">Nombre</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="firstName"
+                          name="firstName"
+                          placeholder="Enter first name"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="direccion">Dirección:</label>
+                        <input 
+                        type="text" 
+                        class="form-control" 
+                        id="direccion" 
+                        name="direccion" 
+                        placeholder="Ingresa tu casa pues">
+                    </div>
+                      <div class="form-group">
+                        <label for="password1">Contraseña</label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="password1"
+                          name="password1"
+                          placeholder="Enter password"
+                        />
+                      </div>
+                      <br />
+                      <button type="submit" class="btn btn-primary btn-block">Listo!</button>
+                    </form>
+
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
 {% endblock %}

@@ -4,34 +4,79 @@
 Pago
 {% endblock %}
 
+{% block link %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<style>
+.cart-container {
+    background-color: #f7f7f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cart-header {
+    color: #333;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+}
+
+.table {
+    background-color: #ffffff;
+    border-radius: 5px;
+    overflow: hidden;  /* Para respetar el border-radius en thead */
+}
+
+.table thead th {
+    background-color: #4e4e70;  /* Un color más suave para el header */
+    color: #ffffff;
+}
+
+.table tbody tr:hover {
+    background-color: #f2f2f2;  /* Color al pasar el mouse sobre una fila */
+}
+
+.btn-danger {
+    border: none;  /* Remover borde */
+}
+
+.btn-danger:hover {
+    opacity: 0.8;  /* Efecto al pasar el mouse sobre el botón */
+}
+</style>
+{% endblock %}
+
 {% block content %}
 <div class="container mt-5">
-    <h2>Carrito de Compras</h2>
-    <table class="table table-bordered table-hover">
-        <thead class="thead-dark">
-        <tr>
-            <th>Artículo</th>
-          <!--  <th>Imagen</th>-->
-            <th>Cantidad</th>
-            <th>Precio Unitario</th>
-            <th>Precio Total</th>
-            <th>Acción</th>
-        </tr>
-        </thead>
-        <tbody>
-        <!-- Ejemplo de una fila -->
-        <tr>
-            <td>Nombre del producto 1</td>
-            <!--<td><img src="URL_IMAGEN" alt="Nombre del producto 1" width="50"></td>-->
-            <td>2</td>
-            <td>$10</td>
-            <td>$20</td>
-            <td><button class="btn btn-danger btn-sm">Eliminar</button></td>
-        </tr>
-        <!-- Puedes añadir más filas siguiendo el mismo patrón -->
-        </tbody>
-    </table>
+    <div class="cart-container">
+        <h2 class="cart-header">Carrito de Compras</h2>
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+            <tr>
+                <th>Artículo</th>
+                <!-- <th>Imagen</th> -->
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Precio Total</th>
+                <th>Acción</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Ejemplo de una fila -->
+            <tr>
+                <td>Nombre del producto 1</td>
+                <!--<td><img src="URL_IMAGEN" alt="Nombre del producto 1" width="50"></td>-->
+                <td>2</td>
+                <td>$10</td>
+                <td>$20</td>
+                <td><button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Eliminar</button></td> <!-- Ícono de Font Awesome para la acción de eliminar -->
+            </tr>
+            <!-- Puedes añadir más filas siguiendo el mismo patrón -->
+            </tbody>
+        </table>
+    </div>
 </div>
+
 
 <!-- Botón para abrir el modal -->
 <div class="d-flex justify-content-center">

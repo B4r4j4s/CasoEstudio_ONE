@@ -4,60 +4,127 @@
 Detalle del Libro
 {% endblock %}
 
-{% block styles %}
+{% block link %}
 <!-- Estilos específicos para esta página -->
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 <style>
-    .bordered {
-        border: 1px solid #ddd;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        margin-bottom: 24px;
-    }
+.bordered {
+    padding: 20px;
+    border: 1px solid #e3e3e3;
+    background-color: #fafafa;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.img-container {
+    text-align: center;
+}
+
+.img-fluid {
+    max-height: 400px;  /* Incremento de la altura máxima de la imagen */
+}
+
+.book-details {
+    font-size: 1.1rem;  /* Incremento del tamaño de la fuente */
+}
+
+.fas {
+    margin-right: 10px;
+}
+
+
 </style>
 {% endblock %}
 
 {% block content %}
 <div class="container mt-5">
     <div class="row">
-        <!-- Panel izquierdo: Imagen, detalles del libro y botón -->
-        <div class="col-md-6">
-            <div class="bordered d-flex mb-4">
-                <img src="{{libro.Imagen}}" class="img-fluid mr-3" alt="Nombre del Libro" style="max-width: 40%;">
-                <div>
-                    <h2>{{libro.titulo}}</h2>
-                    <p><strong>Autor:</strong>{{libro.autor}}</p>
-                    <p><strong>ISBN:</strong>{{libro.ISBN}}</p>
-                    <p><strong>Precio:</strong>{{libro.precio}}</p>
-                </div>
+        <!-- Imagen del libro -->
+        <div class="col-lg-5 mb-5">
+            <div class="bordered img-container">
+                <img src="{{libro.Imagen}}" class="img-fluid" alt="Imagen del libro {{ libro.titulo }}">
             </div>
-            <!-- Botón para añadir al carrito -->
-            <a href="#añadirAlCarrito" class="btn btn-primary btn-lg btn-block mb-4">
-                <i class="fas fa-shopping-cart"></i> Añadir al carrito
-            </a>
         </div>
 
-        <!-- Panel derecho (vacío por ahora) -->
-        <div class="col-md-6">
-            <!-- Espacio reservado para cualquier otro contenido que desees agregar en el futuro -->
+        <!-- Detalles del libro y botón -->
+        <div class="col-lg-7 mb-5">
+            <div class="bordered p-4">
+                <h2>{{libro.titulo}}</h2>
+                <div class="book-details mt-3 mb-4"> <!-- Contenedor para los detalles -->
+                    <p><strong>Autor:</strong> {{libro.autor}}</p>
+                    <p><strong>ISBN:</strong> {{libro.ISBN}}</p>
+                    <p><strong>Precio:</strong> ${{libro.precio}}</p>
+                </div>
+                <!-- Botón para añadir al carrito -->
+                <a href="#añadirAlCarrito" class="btn btn-primary btn-lg">
+                    <i class="fas fa-shopping-cart"></i> Añadir al carrito
+                </a>
+            </div>
         </div>
     </div>
 
     <!-- Sinopsis -->
     <div class="row mt-5">
         <div class="col-12">
-            <div class="bordered">
+            <div class="bordered p-4">
                 <h3>Sinopsis</h3>
-                <p>
-                    {{libro.desc}}
-                </p>
+                <p>{{libro.desc}}</p>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Libros relacionados o similares -->
+<div class="row mt-5">
+    <div class="col-12">
+        <h3>Libros Relacionados</h3>
+    </div>
+
+    <!-- Libro relacionado 1 -->
+    <div class="col-lg-3 mb-4">
+        <a href="#" class="card-link">
+            <div class="bordered img-container mb-3">
+                <img src="https://www.gonvill.com.mx/imagenes/9788419/978841928356.JPG" class="img-fluid" alt="Nombre del Libro 1">
+            </div>
+            <h5>Nombre del Libro 1</h5>
+        </a>
+    </div>
+
+    <!-- Libro relacionado 2 -->
+    <div class="col-lg-3 mb-4">
+        <a href="#" class="card-link">
+            <div class="bordered img-container mb-3">
+                <img src="https://www.gonvill.com.mx/imagenes/9786077/978607747532.JPG" class="img-fluid" alt="Nombre del Libro 2">
+            </div>
+            <h5>Nombre del Libro 2</h5>
+        </a>
+    </div>
+
+    <!-- Libro relacionado 3 -->
+    <div class="col-lg-3 mb-4">
+        <a href="#" class="card-link">
+            <div class="bordered img-container mb-3">
+                <img src="https://www.gonvill.com.mx/imagenes/9788418/978841835496.JPG" class="img-fluid" alt="Nombre del Libro 3">
+            </div>
+            <h5>Nombre del Libro 3</h5>
+        </a>
+    </div>
+
+    <!-- Libro relacionado 4 -->
+    <div class="col-lg-3 mb-4">
+        <a href="#" class="card-link">
+            <div class="bordered img-container mb-3">
+                <img src="https://www.gonvill.com.mx/imagenes/9788491/978849187629.JPG" class="img-fluid" alt="Nombre del Libro 4">
+            </div>
+            <h5>Nombre del Libro 4</h5>
+        </a>
+    </div>
+</div>
+
 {% endblock %}
+
+
 
 {% block scripts %}
 <!-- Scripts específicos para esta página -->

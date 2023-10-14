@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block link %}
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .panel-opciones {
+            display: flex;
+            align-items: center;
+            border: 1px solid #e5e5e5;
+            background-color: #f9f9f9;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 25px;
+        }
+
+        .btn-agregar {
+            margin-right: 50px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Panel de Libros</h2>
+
+    <!-- Panel de opciones -->
+    <div class="panel-opciones">
+        <!-- Botón para agregar -->
+        <button type="button" class="btn btn-primary btn-agregar">Agregar</button>
+
+        <!-- Campo de búsqueda -->
+        <input type="text" placeholder="Buscar libro..." class="form-control d-inline" style="width: auto;">
+        <button type="button" class="btn btn-secondary ml-3">Buscar</button>
+    </div>
+
+    <!-- Tabla de resultados -->
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nombre del libro</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se llenarían los datos desde tu base de datos. Por ahora, es estático -->
+            <tr>
+                <td>001</td>
+                <td>Libro Ejemplo 1</td>
+                <td><button class="btn btn-info btn-sm">Editar</button></td>
+                <td><button class="btn btn-danger btn-sm">Eliminar</button></td>
+            </tr>
+            <!-- Puedes repetir el bloque <tr> para otros libros -->
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}

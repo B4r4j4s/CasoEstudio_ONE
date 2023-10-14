@@ -43,6 +43,33 @@ Pago
 .btn-danger:hover {
     opacity: 0.8;  /* Efecto al pasar el mouse sobre el botón */
 }
+
+        .image-option {
+            display: block;
+            cursor: pointer;
+            border: 3px solid transparent; /* Borde transparente por defecto */
+            border-radius: 5px;
+            transition: border 0.3s ease, box-shadow 0.3s ease; /* Agregamos una transición para box-shadow */
+            padding: 5px; /* Añadimos un padding */
+        }
+
+        .image-option:hover {
+            border: 3px solid #d2d6de; /* Borde sutil cuando se pasa el mouse por encima */
+        }
+
+        .image-option img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+
+        /* Cuando el radio button esté seleccionado, aplicamos los estilos a la etiqueta siguiente */
+        input[type="radio"]:checked + .image-option {
+            border: 3px solid #007BFF; /* Borde más grueso cuando está seleccionado */
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Sombra suave alrededor de la etiqueta seleccionada */
+        }
+
 </style>
 {% endblock %}
 
@@ -139,6 +166,38 @@ Pago
                                     <option>American Express</option>
                                 </select>
                             </div>
+                            <div class="container mt-5">
+                                    Paqueteria
+                                    <form action="tu_ruta_de_procesamiento" method="post">
+                                        <div class="row justify-content-center"> <!-- Centrado de los items -->
+
+                                            <!-- Opción 1 -->
+                                            <div class="col-auto">
+                                                <input type="radio" id="opcion1" name="paqueteria" value="opcion1" />
+                                                <label for="opcion1" class="image-option m-2">
+                                                    <img src="https://www.dhl.com/content/dam/dhl/global/core/images/teaser-image-main/dhl-logo.jpg" alt="Paquetería 1" class="img-fluid">
+                                                </label>
+                                            </div>
+
+                                            <!-- Opción 2 -->
+                                            <div class="col-auto">
+                                                <input type="radio" id="opcion2" name="paqueteria" value="opcion2" />
+                                                <label for="opcion2" class="image-option m-2">
+                                                    <img src="https://lh3.googleusercontent.com/YtXTsa-6SaaMl02-OUo8iRztlX5Thu4aCLavunIV1M5hm9y4ySTPpMjpY44fL4ayz7Se" alt="Paquetería 2" class="img-fluid">
+                                                </label>
+                                            </div>
+
+                                            <!-- Opción 3 -->
+                                            <div class="col-auto">
+                                                <input type="radio" id="opcion3" name="paqueteria" value="opcion3" />
+                                                <label for="opcion3" class="image-option m-2">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/United_Parcel_Service_logo_2014.svg/1718px-United_Parcel_Service_logo_2014.svg.png" alt="Paquetería 3" class="img-fluid">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
                             <button type="submit" class="btn btn-primary mt-2">Pagar con Tarjeta</button>
                         </form>
                     </div>
@@ -170,6 +229,37 @@ Pago
                                 <label for="cantidad">Cantidad</label>
                                 <input type="number" class="form-control" id="cantidad" name="cantidad" step="0.01">
                             </div>
+                            <div class="container mt-5">
+                                    Paqueteria
+                                    <form action="tu_ruta_de_procesamiento" method="post">
+                                        <div class="row justify-content-center"> <!-- Centrado de los items -->
+
+                                            <!-- Opción 1 -->
+                                            <div class="col-auto">
+                                                <input type="radio" id="opcion1" name="paqueteria" value="opcion1" />
+                                                <label for="opcion1" class="image-option m-2">
+                                                    <img src="https://www.dhl.com/content/dam/dhl/global/core/images/teaser-image-main/dhl-logo.jpg" alt="Paquetería 1" class="img-fluid">
+                                                </label>
+                                            </div>
+
+                                            <!-- Opción 2 -->
+                                            <div class="col-auto">
+                                                <input type="radio" id="opcion2" name="paqueteria" value="opcion2" />
+                                                <label for="opcion2" class="image-option m-2">
+                                                    <img src="https://lh3.googleusercontent.com/YtXTsa-6SaaMl02-OUo8iRztlX5Thu4aCLavunIV1M5hm9y4ySTPpMjpY44fL4ayz7Se" alt="Paquetería 2" class="img-fluid">
+                                                </label>
+                                            </div>
+
+                                            <!-- Opción 3 -->
+                                            <div class="col-auto">
+                                                <input type="radio" id="opcion3" name="paqueteria" value="opcion3" />
+                                                <label for="opcion3" class="image-option m-2">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/United_Parcel_Service_logo_2014.svg/1718px-United_Parcel_Service_logo_2014.svg.png" alt="Paquetería 3" class="img-fluid">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             <button type="submit" class="btn btn-primary mt-2">Pagar con Cheque</button>
                         </form>
                     </div>

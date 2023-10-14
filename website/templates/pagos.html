@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block title %}
+Pago
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Carrito de Compras</h2>
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+        <tr>
+            <th>Artículo</th>
+          <!--  <th>Imagen</th>-->
+            <th>Cantidad</th>
+            <th>Precio Unitario</th>
+            <th>Precio Total</th>
+            <th>Acción</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Ejemplo de una fila -->
+        <tr>
+            <td>Nombre del producto 1</td>
+            <!--<td><img src="URL_IMAGEN" alt="Nombre del producto 1" width="50"></td>-->
+            <td>2</td>
+            <td>$10</td>
+            <td>$20</td>
+            <td><button class="btn btn-danger btn-sm">Eliminar</button></td>
+        </tr>
+        <!-- Puedes añadir más filas siguiendo el mismo patrón -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Botón para abrir el modal -->
+<div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formularioModal">
+        Pagar
+    </button>
+</div>
+
+<!-- El modal en sí -->
+<div class="modal fade" id="formularioModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Cabecera del modal -->
+            <div class="modal-header">
+                <h4 class="modal-title">Formulario de Pago</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Cuerpo del modal con las pestañas y el formulario -->
+            <div class="modal-body">
+                <ul class="nav nav-tabs" id="myTabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="tarjeta-tab" data-toggle="tab" href="#tarjeta" role="tab">Tarjeta de Crédito/Débito</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="cheque-tab" data-toggle="tab" href="#cheque" role="tab">Cheque</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content mt-3" id="myTabsContent">
+                    <!-- Pestaña de Tarjeta de Crédito/Débito -->
+                    <div class="tab-pane fade show active" id="tarjeta" role="tabpanel">
+                        <form action="{{ url_for('views.pagar') }}" method="post">
+                            <div class="form-group">
+                                <label for="nombreTitularTarjeta">Nombre del titular</label>
+                                <input type="text" class="form-control" id="nombreTitularTarjeta" name="nombreTitularTarjeta" placeholder="Tal como aparece en la tarjeta">
+                            </div>
+                            <div class="form-group">
+                                <label for="numeroTarjeta">Número de la tarjeta</label>
+                                <input type="text" class="form-control" id="numeroTarjeta" name="numeroTarjeta" placeholder="Ej. 1234 5678 1234 5678">
+                            </div>
+                            <div class="form-group">
+                                <label for="fechaVencimiento">Fecha de vencimiento</label>
+                                <input type="text" class="form-control" id="fechaVencimiento" name="fechaVencimiento" placeholder="MM/AA">
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">Código de seguridad (CVV/CVC)</label>
+                                <input type="text" class="form-control" id="cvv" name="cvv" placeholder="Ej. 123">
+                            </div>
+                            <div class="form-group">
+                                <label for="direccionFacturacion">Dirección de facturación</label>
+                                <input type="text" class="form-control" id="direccionFacturacion" name="direccionFacturacion">
+                            </div>
+                            <div class="form-group">
+                                <label for="tipoTarjeta">Tipo de tarjeta</label>
+                                <select class="form-control" id="tipoTarjeta" name="tipoTarjeta">
+                                    <option>Visa</option>
+                                    <option>MasterCard</option>
+                                    <option>American Express</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-2">Pagar con Tarjeta</button>
+                        </form>
+                    </div>
+
+                    <!-- Pestaña de Cheque -->
+                    <div class="tab-pane fade" id="cheque" role="tabpanel">
+                        <form action="{{ url_for('views.pagar') }}" method="post">
+                            <div class="form-group">
+                                <label for="nombreTitularCheque">Nombre del titular</label>
+                                <input type="text" class="form-control" id="nombreTitularCheque" name="nombreTitularCheque">
+                            </div>
+                            <div class="form-group">
+                                <label for="numeroCuenta">Número de cuenta</label>
+                                <input type="text" class="form-control" id="numeroCuenta" name="numeroCuenta">
+                            </div>
+                            <div class="form-group">
+                                <label for="numeroRuta">Número de ruta del banco</label>
+                                <input type="text" class="form-control" id="numeroRuta" name="numeroRuta">
+                            </div>
+                            <div class="form-group">
+                                <label for="direccionTitular">Dirección del titular</label>
+                                <input type="text" class="form-control" id="direccionTitular" name="direccionTitular">
+                            </div>
+                            <div class="form-group">
+                                <label for="numeroCheque">Número de cheque</label>
+                                <input type="text" class="form-control" id="numeroCheque" name="numeroCheque">
+                            </div>
+                            <div class="form-group">
+                                <label for="cantidad">Cantidad</label>
+                                <input type="number" class="form-control" id="cantidad" name="cantidad" step="0.01">
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-2">Pagar con Cheque</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

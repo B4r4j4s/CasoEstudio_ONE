@@ -25,6 +25,7 @@ class Libro(db.Model):
     desc =  db.Column(db.String(150))
     precio = db.Column(db.Integer)
     stock = db.Column(db.Integer)
+    Imagen=db.Column(db.Text)
 
 #Pedidos
 class Pedido(db.Model):

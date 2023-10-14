@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+Resultados de búsqueda
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        {% for libro in libros %}
+        <div class="col-2 mb-4">
+            <a href="{{ url_for('views.detalle', id_libro=libro.id) }}" class="card-link d-block">
+                <div class="card card-square">
+                    <img src="{{ libro.Imagen }}" class="card-img-top" alt="Imagen del libro {{ libro.titulo }}">
+                    <div class="card-body">
+                        <h6 class="card-title text-center">{{ libro.titulo }}</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

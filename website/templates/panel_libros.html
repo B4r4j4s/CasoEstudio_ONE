@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de libros</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card {
+            background-color: #e6f7ff;  /* Color de fondo azul claro para las tarjetas */
+        }
+
+        /* Estilo para hacer la tarjeta cuadrada */
+        /* Estilo para hacer la tarjeta cuadrada */
+        .card-square {
+            width: 150px;  /* Ancho fijo */
+            height: 150px;  /* Alto fijo */
+        }
+        .card-square > .card-body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-link {
+            text-decoration: none;  /* Quitar subrayado */
+        }
+        .card-link:hover .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Agregar un ligero sombreado al pasar el cursor */
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .card-link .card {
+            transition: box-shadow 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="mb-4">10 primeros libros</h1>
+
+    <!-- Primera fila con 5 tarjetas -->
+    <div class="row">
+        <!-- Tarjeta 1 -->
+        <div class="col-2 mb-4">
+            <a href="http://www.google.com" class="card-link d-block" target="_blank">  <!-- Añadido 'd-block' aquí -->
+                <div class="card card-square">
+                    <img src="ruta/a/tu/imagen1.jpg" class="card-img-top" alt="Imagen del libro 1">
+                    <div class="card-body">
+                        <h6 class="card-title text-center">Nombre del Libro 1</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="col-2 mb-4">
+            <a href="http://www.google.com" class="card-link d-block" target="_blank">
+                <div class="card card-square">
+                    <img src="ruta/a/tu/imagen1.jpg" class="card-img-top" alt="Imagen del libro 1">
+                    <div class="card-body">
+                        <h6 class="card-title text-center">Nombre del Libro 1</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- ... Y así sucesivamente para las tarjetas 3, 4 y 5 ... -->
+    </div>
+
+    <!-- Segunda fila con 5 tarjetas (si es necesario) -->
+    <div class="row">
+        <div class="col-2 mb-4">
+            <a href="http://www.google.com" class="card-link d-block" target="_blank">  <!-- Añadido 'd-block' aquí -->
+                <div class="card card-square">
+                    <img src="ruta/a/tu/imagen1.jpg" class="card-img-top" alt="Imagen del libro 1">
+                    <div class="card-body">
+                        <h6 class="card-title text-center">Nombre del Libro 1</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-2 mb-4">
+            <a href="http://www.google.com" class="card-link d-block" target="_blank">  <!-- Añadido 'd-block' aquí -->
+                <div class="card card-square">
+                    <img src="ruta/a/tu/imagen1.jpg" class="card-img-top" alt="Imagen del libro 1">
+                    <div class="card-body">
+                        <h6 class="card-title text-center">Nombre del Libro 1</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+        <!-- ... -->
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

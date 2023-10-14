@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}
+Detalle del Libro
+{% endblock %}
+
+{% block styles %}
+<!-- Estilos específicos para esta página -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<style>
+    .bordered {
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin-bottom: 24px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <!-- Panel izquierdo: Imagen, detalles del libro y botón -->
+        <div class="col-md-6">
+            <div class="bordered d-flex mb-4">
+                <img src="{{libro.Imagen}}" class="img-fluid mr-3" alt="Nombre del Libro" style="max-width: 40%;">
+                <div>
+                    <h2>{{libro.titulo}}</h2>
+                    <p><strong>Autor:</strong>{{libro.autor}}</p>
+                    <p><strong>ISBN:</strong>{{libro.ISBN}}</p>
+                    <p><strong>Precio:</strong>{{libro.precio}}</p>
+                </div>
+            </div>
+            <!-- Botón para añadir al carrito -->
+            <a href="#añadirAlCarrito" class="btn btn-primary btn-lg btn-block mb-4">
+                <i class="fas fa-shopping-cart"></i> Añadir al carrito
+            </a>
+        </div>
+
+        <!-- Panel derecho (vacío por ahora) -->
+        <div class="col-md-6">
+            <!-- Espacio reservado para cualquier otro contenido que desees agregar en el futuro -->
+        </div>
+    </div>
+
+    <!-- Sinopsis -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="bordered">
+                <h3>Sinopsis</h3>
+                <p>
+                    {{libro.desc}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!-- Scripts específicos para esta página -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}

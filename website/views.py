@@ -35,3 +35,7 @@ def buscar():
         libros_encontrados = Libro.query.filter(Libro.titulo.ilike(f'%{titulo}%')).all()
         return render_template('buscar.html', user=current_user,libros=libros_encontrados)
     return render_template('home.html')
+
+@views.route('/altas_libros')
+def altas():
+    return render_template('alta_libros.html',user=current_user)

@@ -20,7 +20,7 @@ def detalle(id_libro):
 
 @views.route('/carrito')
 def carritoCompras():
-    return render_template("Pagos.html",user=current_user)
+    return render_template("pagos.html",user=current_user)
 
 @views.route('/pagar', methods=['POST'])
 def pagar():

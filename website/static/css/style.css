@@ -1,0 +1,40 @@
+/* Estilos personalizados para la tabla */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid #ccc; /* Borde gris */
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+thead {
+    background-color: #f2f2f2; /* Fondo gris claro para el encabezado */
+    color: #333; /* Texto gris oscuro en el encabezado */
+}
+
+/* Estilos para filas alternas */
+tbody tr:nth-child(odd) {
+    background-color: #fff; /* Fondo blanco para filas impares */
+}
+
+/* Enlaces en las celdas con color azul */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse sobre los enlaces */
+}
+
+/* Estilos personalizados para el encabezado */
+h1 {
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-top: 20px; /* Agrega un margen superior para centrar verticalmente */
+}

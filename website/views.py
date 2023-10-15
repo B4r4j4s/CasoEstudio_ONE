@@ -1,7 +1,7 @@
 from flask import Blueprint,render_template, request, redirect, url_for
 from flask_login import login_required, current_user
 from .models import Libro
-
+from .models import Pedido
 views = Blueprint('views', __name__ )
 
 @views.route('/')
@@ -11,7 +11,12 @@ def home():
 
 @views.route('/seguimiento')
 def seguimiento():
-    return render_template("seguimiento.html", user=current_user)
+    # Obtén los pedidos de la base de datos, por ejemplo, si estás utilizando SQLAlchemy
+    pedidos = Pedido.query.all()
+    
+    return render_template("seguimiento.html", user=current_user, pedidos=pedidos)
+
+
 
 @views.route('/detalle_Libro/<int:id_libro>')
 def detalle(id_libro):
